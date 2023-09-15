@@ -568,10 +568,6 @@ video {
   }
 }
 
-.static {
-  position: static;
-}
-
 .m-auto {
   margin: auto;
 }
@@ -672,6 +668,14 @@ video {
           background-clip: text;
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -755,13 +759,13 @@ video {
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
-.text-transparent {
-  color: transparent;
-}
-
 .text-saffron {
   --tw-text-opacity: 1;
   color: rgb(231 187 65 / var(--tw-text-opacity));
+}
+
+.text-transparent {
+  color: transparent;
 }
 
 .blur {
