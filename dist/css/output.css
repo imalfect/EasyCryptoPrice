@@ -568,6 +568,10 @@ video {
   }
 }
 
+.static {
+  position: static;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -663,10 +667,6 @@ video {
   --tw-gradient-to: #431407 var(--tw-gradient-to-position);
 }
 
-.to-red-500 {
-  --tw-gradient-to: #ef4444 var(--tw-gradient-to-position);
-}
-
 .bg-clip-text {
   -webkit-background-clip: text;
           background-clip: text;
@@ -759,6 +759,11 @@ video {
   color: transparent;
 }
 
+.text-saffron {
+  --tw-text-opacity: 1;
+  color: rgb(231 187 65 / var(--tw-text-opacity));
+}
+
 .blur {
   --tw-blur: blur(8px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -807,6 +812,22 @@ video {
   /* Background color on hover */
 }
 
+/* Light Mode Styles */
+
+@media (prefers-color-scheme: light) {
+  .darkOnly {
+    display: none;
+  }
+}
+
+/* Dark Mode Styles */
+
+@media (prefers-color-scheme: dark) {
+  .darkOnly {
+    display: inline-block;
+  }
+}
+
 .hover\:border-saffron:hover {
   --tw-border-opacity: 1;
   border-color: rgb(231 187 65 / var(--tw-border-opacity));
@@ -823,30 +844,10 @@ video {
     background-color: rgb(57 62 65 / var(--tw-bg-opacity));
   }
 
-  .dark\:bg-gradient-to-r {
-    background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  }
-
-  .dark\:from-saffron {
-    --tw-gradient-from: #E7BB41 var(--tw-gradient-from-position);
-    --tw-gradient-to: rgb(231 187 65 / 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  }
-
-  .dark\:from-red-300 {
-    --tw-gradient-from: #fca5a5 var(--tw-gradient-from-position);
-    --tw-gradient-to: rgb(252 165 165 / 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  }
-
   .dark\:from-red-500 {
     --tw-gradient-from: #ef4444 var(--tw-gradient-from-position);
     --tw-gradient-to: rgb(239 68 68 / 0) var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  }
-
-  .dark\:to-red-500 {
-    --tw-gradient-to: #ef4444 var(--tw-gradient-to-position);
   }
 
   .dark\:to-red-700 {

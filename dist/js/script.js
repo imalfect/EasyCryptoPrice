@@ -25,12 +25,23 @@ async function getCoinInfo() {
     const name = coinInfo.name;
     // Symbol
     const symbol = coinInfo.symbol;
+    // Market cap
+    const marketCap = coinInfo.market_data.market_cap.usd;
     // 24h high and low
-    const high24 = coinInfo.market_data.high_24h.usd;
-    const low24 = coinInfo.market_data.low_24h.usd;
+    let high24 = coinInfo.market_data.high_24h.usd;
+    let low24 = coinInfo.market_data.low_24h.usd;
+    if (!coinInfo.market_data.low_24h.usd) {
+        console.log('e');
+        high24 = 0;
+    }
+    if (!coinInfo.market_data.low_24h.usd) {
+        low24 = 0;
+    }
     // 24h volume
     const volume24 = coinInfo.market_data.total_volume.usd;
-
+    if (!coinInfo.market_data.price_change_percentage_24h) {
+        coinInfo.market_data.price_change_percentage_24h = 0;
+    }
     // Display data
     document.getElementById('coinLogo').src = image;
     document.getElementById('coinName').innerHTML = `${name} (${symbol.toUpperCase()})`;
@@ -55,11 +66,10 @@ async function getCoinInfo() {
             document.getElementById('coinPriceAndChange').classList.add(className);
         });
     }
-    console.log(high24)
-    console.log(low24);
     document.getElementById('24hHigh').innerHTML = numberFormatter.format(high24);
     document.getElementById('24hLow').innerHTML = numberFormatter.format(low24);
     document.getElementById('24hVolume').innerHTML = numberFormatter.format(volume24);
+    document.getElementById('marketCap').innerHTML = numberFormatter.format(marketCap);
     // Show the coin info div
     document.getElementById('cryptoPriceDisplayDiv').classList.remove('hidden');
 }
