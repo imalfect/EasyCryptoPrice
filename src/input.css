@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.material-symbols-outlined {
+     font-variation-settings:
+             'FILL' 0,
+             'wght' 400,
+             'GRAD' 0,
+             'opsz' 24
+}
+
+.visually-hidden {
+    display: none;
+}
+
+.awesomplete {
+}
+.awesomplete ul {
+    margin-top: 2rem;
+}
+.awesomplete > ul > li {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #E7BB41; /* Border of the dropdown */
+    max-width: 15rem; /* Maximum height of the dropdown */
+    overflow-y: auto; /* Enable vertical scrolling if necessary */
+    padding: 8px; /* Spacing around each list item */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+.awesomplete mark {
+    background-color: #44BBA4; /* Background color on hover */
+}
+
+     /* Light Mode Styles */
+@media (prefers-color-scheme: light) {
+    .darkOnly {
+        display: none;
+    }
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+    .darkOnly {
+        display: inline-block;
+    }
+}

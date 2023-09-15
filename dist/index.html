@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script type="text/javascript" src="js/awesomplete.min.js"></script>
+    <script src="js/script.js"></script>
+    <title>Title</title>
+</head>
+<body onload="getCoinList()">
+    <div class="flex h-screen text-center dark:bg-onyx dark:text-platinum">
+        <div class="m-auto">
+            <div>
+                <h1 class="font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl pb-4 bg-clip-text bg-gradient-to-r from-saffron to-keppel text-transparent">
+                    Crypto made easy.
+                </h1>
+                <h2 class="font-medium px-4 text-2xl">
+                    Check crypto info hassle-free without any distractions. Just enter the name!
+                </h2>
+                <!-- Light Mode -->
+                <h3 class="font-medium px-4 text-lg mt-2 darkOnly">
+                    Data provided by
+                    <a href="https://coingecko.com" target="_blank" rel="noreferrer">
+                        <img
+                                src="img/coingecko.svg" alt="coingecko logo"
+                                class="inline-block h-8">
+                    </a>
+
+                </h3>
+            </div>
+            <div class="mt-5">
+                <label>
+                    <input
+                            type="text"
+                            id="coinNameInput"
+                            class="border-4 border-keppel h-16 px-5 pr-16 rounded-xl text-lg focus:outline-none hover:border-saffron coinInput dark:bg-onyx"
+                            placeholder="Search here!">
+                </label>
+                <button
+                        onclick="getCoinInfo()"
+                        class="border-4 border-keppel hover:border-saffron rounded-xl text-lg px-4 h-14 ml-5 mt-5">
+                    Search!
+                </button>
+            </div>
+            <div class="mt-8 hidden" id="cryptoPriceDisplayDiv">
+                <div>
+                    <p class="text-4xl">
+                        <img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579" alt="coin logo" id="coinLogo" class="inline-block h-14">
+                        <span id="coinName" class="font-extrabold">Bitcoin (BTC)</span>
+                    </p>
+                    <p id="coinPriceAndChange" class="font-bold text-3xl bg-clip-text mt-2">
+                        $ 34,000
+                    </p>
+                    <p class="font-medium text-xl mt-2">
+                        <span class="material-symbols-outlined inline-block align-middle text-red-600">trending_down</span>
+                        24h Low : <span id="24hLow" class="font-extrabold">$ 33,000</span> |
+                        <span class="material-symbols-outlined inline-block align-middle text-green-600">trending_up</span>
+                        24h High: <span id="24hHigh" class="font-extrabold">$ 35,000</span>
+                    </p>
+                    <p class="font-medium text-xl mt-2">
+                        <span class="material-symbols-outlined inline-block align-middle text-keppel">currency_exchange</span>
+                        24h Volume : <span id="24hVolume" class="font-extrabold">$ 145,020,121.19</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
